@@ -26,10 +26,10 @@ theRecipe: Recipe[];
 //   ];
 
 
-  onRecipeSelected (recipe: Recipe) {
-   this.recipeWasSelected.emit(recipe);
+  // onRecipeSelected (recipe: Recipe) {
+  //  this.recipeWasSelected.emit(recipe);
 
-  }
+  // }
 
   constructor(private recipeService: RecipeService) { }
 
