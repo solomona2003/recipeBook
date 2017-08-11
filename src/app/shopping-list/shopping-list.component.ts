@@ -1,6 +1,7 @@
 import { Ingredient } from './../shared/model/ingredient.model';
 import { ShoppingListService } from './service/shopping-list.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Subscription} from 'rxjs/Subscription';
 
 
 
@@ -11,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-list.component.css']
   
 })
-export class ShoppingListComponent implements OnInit {
+export class ShoppingListComponent implements OnInit, OnDestroy {
 
   ingredient: Ingredient [];
+  private changeInSliceSubscription: Subscription;
   // theIngredients: Ingredient [] = [
 
   //   new Ingredient ('Apples', 5),
@@ -30,8 +32,11 @@ export class ShoppingListComponent implements OnInit {
   //  what is already in the list
    this.ingredient = this.shoppingListService.getTheIngredients();
    // what is new after add
-   this.shoppingListService.showChangeInSlice.subscribe ((ingredient: Ingredient[]) => {this.ingredient = ingredient})
-
+   this.changeInSliceSubscription = this.shoppingListService.showChangeInSlice.subscribe (
+     (ingredient: Ingredient[]) => {
+       this.ingredient = ingredient; }
+      );
+                                // this subscriptio is no longer angualr, its from rxjs, you need to unsubscribe
   }
 
 
@@ -40,6 +45,9 @@ export class ShoppingListComponent implements OnInit {
     this.shoppingListService.onAddItems(ingredient);
   }
 
+  ngOnDestroy() {
+    this.changeInSliceSubscription.unsubscribe();
+  }
 
 
 

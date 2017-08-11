@@ -2,21 +2,12 @@
 <h3 class="mains">Recipes Component</h3>
 <div class="row">
  <div class=" col-md-5">
-   <app-recipes-list (recipeWasSelected) = "selectedRecipe = $event" ></app-recipes-list> 
+
+   <app-recipes-list></app-recipes-list> 
 
  </div>
  <div class="col-md-7">
-
   <router-outlet></router-outlet>
-   <!-- <app-recipes-detail 
-   *ngIf="selectedRecipe; else infoText"
-   [recipeD]= selectedRecipe>
-  </app-recipes-detail>
-   <ng-template #infoText>
-     <h4 class="subs">Recipes-Details Component</h4>
-
-     <p class="subs">Please Select a Recipe!</p>
-   </ng-template> -->
  </div>
 </div>
 

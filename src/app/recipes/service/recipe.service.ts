@@ -1,6 +1,6 @@
 import { ShoppingListService } from './../../shopping-list/service/shopping-list.service';
 import { Ingredient } from './../../shared/model/ingredient.model';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Recipe } from './../recipes-list/model/recipes.model';
 
 
@@ -14,7 +14,7 @@ export class RecipeService {
 
   }
 
-recipeSelected = new EventEmitter <Recipe> ();
+// recipeSelected = new EventEmitter <Recipe> ();
 
 private theRecipe: Recipe[] = 
 
