@@ -21,13 +21,13 @@ private  theIngredients: Ingredient [] =
   }
 
   onAddItems (ingredient: Ingredient) {
-      this.theIngredients.push (ingredient); //pushes it to the slice not the original
+      this.theIngredients.push (ingredient); // pushes it to the slice not the original
       this.showChangeInSlice.emit (this.theIngredients.slice());
   }
 
   
   onAddIngredeint (ingredient: Ingredient []) {
-                                //to take out each array and inset is as each
+                                // to take out each array and inset it as each element of the array
      this.theIngredients.push (...ingredient);
      this.showChangeInSlice.emit (this.theIngredients.slice());
   }

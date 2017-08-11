@@ -46,6 +46,9 @@ private theRecipe: Recipe[] =
     return this.theRecipe.slice();
   }
 
+  getRecipe (index: number) {
+   return this.theRecipe.slice()[index];
+  }
 // from recipe service
  
     addIngredientsToShoppingList (ingredient: Ingredient[]) {

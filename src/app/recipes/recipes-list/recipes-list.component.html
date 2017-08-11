@@ -2,14 +2,17 @@
 <h4 class="mains">Recipes-List Component</h4>
 <div class="row">
      <div class="col-xs-12">
-          <button type="" class="btn btn-success">New Recipe</button>
+          <button type="" class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
      </div>
 </div>
 <hr>
 <div class="row">
     <div class="col-xs-12">
         <app-recipes-item  
-          *ngFor="let x of theRecipe" 
+        
+        
+          *ngFor="let x of theRecipe; let i = index" 
+          [index] = "i"
           [recipe]=x
           (recipeSelected)="onRecipeSelected(x)"> 
         </app-recipes-item> 
