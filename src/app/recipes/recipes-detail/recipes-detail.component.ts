@@ -52,4 +52,9 @@ export class RecipesDetailComponent implements OnInit {
 
   }
 
+  onDelete() {
+    this.recipeService.onDelete(this.id);
+    this.router.navigate(['../'], {relativeTo: this.activatedRoute});
+  }
+
 }
