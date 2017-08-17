@@ -5,6 +5,7 @@ export class ShoppingListService {
 
 // to show what is new in the slice
 showChangeInSlice = new Subject <Ingredient[]> ();
+startedEditing = new Subject <number> (); 
 
 private  theIngredients: Ingredient [] = 
  
@@ -26,9 +27,24 @@ private  theIngredients: Ingredient [] =
   }
 
  
-  onAddIngredeint (ingredient: Ingredient []) {
+  onAddIngredient (ingredient: Ingredient []) {
                                 // to take out each array and inset it as each element of the array
      this.theIngredients.push (...ingredient);
      this.showChangeInSlice.next(this.theIngredients.slice());
+  }
+
+
+  getIngredient (index: number) {
+    return this.theIngredients[index];
+  }
+
+  updateIngredient (index: number, newIngredient: Ingredient) {
+    this.theIngredients[index] = newIngredient;
+    this.showChangeInSlice.next(this.theIngredients.slice());
+  }
+
+  deleteItem (index: number) {
+      this.theIngredients.splice(index, 1);
+      this.showChangeInSlice.next(this.theIngredients.slice());
   }
 }

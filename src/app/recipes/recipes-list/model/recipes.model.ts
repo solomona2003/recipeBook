@@ -3,7 +3,7 @@ export class Recipe {
     public name: string;
     public description: string;
     public imagePath: string;
-    public ingredient: Ingredient[];
+    public ingredient: Ingredient[]; // makes all the difference to the earlier confusion
 
     constructor (name: string, desc: string , imagePath: string, ingredient: Ingredient[]) {
         this.name = name;

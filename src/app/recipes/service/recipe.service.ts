@@ -53,7 +53,7 @@ private theRecipe: Recipe[] =
  
     addIngredientsToShoppingList (ingredient: Ingredient[]) {
 
-      this.shoppingListService.onAddIngredeint(ingredient);
+      this.shoppingListService.onAddIngredient(ingredient);
 
      }
 

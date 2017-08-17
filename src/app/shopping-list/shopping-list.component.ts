@@ -39,6 +39,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
                                 // this subscriptio is no longer angualr, its from rxjs, you need to unsubscribe
   }
 
+onEditItem(index: number) {
+this.shoppingListService.startedEditing.next(index);
+}
+
 
   onListAdded (ingredient: Ingredient) {
 
