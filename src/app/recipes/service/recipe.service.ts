@@ -43,6 +43,13 @@ private theRecipe: Recipe[] =
 
   ];
 
+
+  setRecipes(recipe: Recipe[]) {
+  this.theRecipe = recipe;
+  this.recipesChanged.next(this.theRecipe.slice());
+  }
+
+
   getRecipes () {
     return this.theRecipe.slice();
   }

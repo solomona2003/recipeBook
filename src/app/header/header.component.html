@@ -18,8 +18,8 @@
         <li  class="dropdown"  appDropdown>
           <a style="cursor: pointer" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li >  <a style="cursor: pointer" ><i style="float: right" class="material-icons">save</i> <p style="font-size: 15px">Save</p> </a></li>
-            <li><a style="cursor: pointer"><i style="float: right" class="material-icons">cloud_download</i>  <p style="font-size: 15px">Fetch Data</p> </a></li>
+            <li >  <a style="cursor: pointer" (click) = "onSave()" ><i style="float: right" class="material-icons">save</i> <p style="font-size: 15px">Save</p> </a></li>
+            <li><a style="cursor: pointer" (click) = "onGet()"><i style="float: right" class="material-icons">cloud_download</i>  <p style="font-size: 15px">Fetch Data</p> </a></li>
           </ul>
         </li>
       </ul>
