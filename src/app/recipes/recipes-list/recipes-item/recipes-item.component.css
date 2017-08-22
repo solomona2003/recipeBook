@@ -1,3 +1,10 @@
-.bg {
-    background-color: grey;
+
+
+
+:focus { 
+    outline: none !important;
+    border-color: #FFFFFF;
+    box-shadow: 2px 4px 10px #808080;
 }
+
+

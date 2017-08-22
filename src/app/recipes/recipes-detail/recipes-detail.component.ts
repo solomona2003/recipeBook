@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { Ingredient } from './../../shared/model/ingredient.model';
 import { ShoppingListService } from './../../shopping-list/service/shopping-list.service';
 import { ShoppingListComponent } from './../../shopping-list/shopping-list.component';
@@ -19,7 +20,7 @@ export class RecipesDetailComponent implements OnInit {
   id: number;
 
   constructor(private recipeService: RecipeService, private shoppingListService: ShoppingListService,
-    private activatedRoute: ActivatedRoute, private router: Router) { }
+    private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(

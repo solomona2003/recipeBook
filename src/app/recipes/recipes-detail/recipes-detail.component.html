@@ -45,9 +45,14 @@
         Manage Recipe <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li class="list-group-item" (click)= "onAddToShoppingList()"> <a style="cursor: pointer"> To Shopping List</a></li>
-        <li class="list-group-item" (click) = "onEditRecipe()"> <a style="cursor: pointer"> Edit Recipe</a></li>
-        <li class="list-group-item"> <a style="cursor: pointer" (click) = "onDelete()"> Delete Recipe</a></li>
+        <li  (click)= "onAddToShoppingList()"> <a style="cursor: pointer"> 
+            <span class="glyphicon glyphicon-plus" style="margin-right: 10px"></span>  To Shopping List</a></li>
+        <li  (click) = "onEditRecipe()"> <a style="cursor: pointer">
+            <span style="margin-right: 10px" class="glyphicon glyphicon-edit"></span>    Edit Recipe</a></li>
 
+            <ng-template [ngIf]="authService.isAuthenticated()">
+            <li > <a style="cursor: pointer" (click) = "onDelete()">
+            <span class="glyphicon glyphicon-trash" style="margin-right: 10px"></span> Delete Recipe</a></li>
+            </ng-template>
       </ul>
     </div>
